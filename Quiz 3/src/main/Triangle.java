@@ -3,7 +3,7 @@ package main;
 import java.util.Arrays;
 import java.lang.Math.*;
 
-public class Triangle {
+public class Triangle extends GeometricObject {
 	
 	double side1 = 1.0;
 	double side2= 1.0;
@@ -31,16 +31,22 @@ public class Triangle {
 	public double get_side3(){
 		return this.side3;
 	}
+	public double getPerimeter(){
+		double perimeter;
+		perimeter = this.side1 + this.side2 + this.side3;
+		return perimeter;
+	}
 	
-	public static double getArea(Triangle tri){
+	
+	public double getArea(){
 		//Creating array to sort the sides
 		double[] side_list = new double[3];
 		double height;
 		double base;
 		
-		side_list[0]= tri.get_side1();
-		side_list[1]= tri.get_side2();
-		side_list[2]= tri.get_side3();
+		side_list[0]= this.side1;
+		side_list[1]= this.side2;
+		side_list[2]= this.side3;
 		
 		Arrays.sort(side_list);
 		
@@ -57,8 +63,9 @@ public class Triangle {
 		}
 		
 		double area = temp * height;
-		
-		return area;
+		double answer = Math.round(area*100);
+		answer = answer/100;
+		return answer;
 		
 	}
 	
@@ -68,7 +75,8 @@ public class Triangle {
 		side_list[1]= tri.get_side1();
 		
 		//System.out.print(side_list[1]/2);
-		System.out.println(getArea(tri));
+		System.out.println(tri.getArea());
+		System.out.println(tri.getPerimeter());
 		}
 	}
 
