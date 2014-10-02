@@ -68,6 +68,11 @@ public class Triangle extends GeometricObject {
 		return answer;
 		
 	}
+	public String ToString(){
+		String x;
+		x = this.toString();
+		return x;
+	}
 	
 	public static void main(String[] args) {
 		Triangle tri = new Triangle(3,4,5);
@@ -77,6 +82,7 @@ public class Triangle extends GeometricObject {
 		//System.out.print(side_list[1]/2);
 		System.out.println(tri.getArea());
 		System.out.println(tri.getPerimeter());
+		System.out.println(tri.ToString());
 		}
 	}
 
